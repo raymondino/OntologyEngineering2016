@@ -1,0 +1,1694 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/"
+     xml:base="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/">
+        <owl:versionIRI rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/1.0.1"/>
+        <rdfs:comment xml:lang="en">This ontology was created on 3/18/2016. 
+This ontology was updated on 3/25/2016 for version 1.0.1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Author: Rui Yan https://tw.rpi.edu//web/person/RuiYan 
+Hao Zhong https://tw.rpi.edu//web/person/HaoZhong</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/contains -->
+
+    <owl:ObjectProperty rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/contains">
+        <rdfs:domain rdf:resource="http://streamreasoning.org/ontologies/frappe#Frame"/>
+        <rdfs:range rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Record"/>
+        <rdfs:comment xml:lang="en">a frame contains multiple records.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contains</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/hasFrameInfo -->
+
+    <owl:ObjectProperty rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/hasFrameInfo">
+        <rdfs:domain rdf:resource="http://streamreasoning.org/ontologies/frappe#Frame"/>
+        <rdfs:range rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/ActivePlay"/>
+        <rdfs:comment xml:lang="en">this property connects frame and its information. An example is :Frame1 :hasFrameInfo :BallTouch. This facilitates the identification of semantic important frame (which defines as a frame that hasFrameInfo some active play). Not all frames contains some active play. Only those that contain some active play are considered as important.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has frame information</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/hasSensor -->
+
+    <owl:ObjectProperty rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/hasSensor">
+        <rdfs:domain rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Record"/>
+        <rdfs:range rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has sensor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/hasTeam -->
+
+    <owl:ObjectProperty rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/hasTeam">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/SoccerPlayer"/>
+        <rdfs:range rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Team"/>
+        <rdfs:comment xml:lang="en">hasTeam property is functional, because every Player individual can have at most 1 team.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has team</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/hasTeammate -->
+
+    <owl:ObjectProperty rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/hasTeammate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/SoccerPlayer"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/SoccerPlayer"/>
+        <rdfs:comment xml:lang="en">hasTeammate property is symmetric because A hasTeammate B is equivalent to B hasTeammate A.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has teammate</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/involves -->
+
+    <owl:ObjectProperty rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/involves">
+        <owl:inverseOf rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/isInvolvedIn"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://dbpedia.org/ontology/SoccerPlayer"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Ball"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/ActivePlay"/>
+        <rdfs:comment xml:lang="en">an active play involves a player</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">involves</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/isAt -->
+
+    <owl:ObjectProperty rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/isAt">
+        <owl:inverseOf rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/isPositionOf"/>
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/SoccerPlayer"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/position"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is at</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/isFartherToOwnGoalLineThan -->
+
+    <owl:ObjectProperty rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/isFartherToOwnGoalLineThan">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/SoccerPlayer"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/position"/>
+        <rdfs:comment xml:lang="en">This property describes that a player is farther to own goal line than one of his/her teammates. The comparison will be done in the data pre-processing. This propety seems to be transitive, since A isFartherThan B, B isFartherThan C, then A isFartherThan C. However, reasoning error will occur if it is transitive. We couldn&apos;t figure out why (at least for now).</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is farther to own goal line than</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/isInvolvedIn -->
+
+    <owl:ObjectProperty rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/isInvolvedIn">
+        <rdfs:domain rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/ActivePlay"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://dbpedia.org/ontology/SoccerPlayer"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Ball"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is involved in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/isNearerToDefenderGoalLineThan -->
+
+    <owl:ObjectProperty rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/isNearerToDefenderGoalLineThan">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/SoccerPlayer"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://dbpedia.org/ontology/SoccerPlayer"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Ball"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is nearer to defender goal line than</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/isPositionOf -->
+
+    <owl:ObjectProperty rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/isPositionOf">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/position"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/SoccerPlayer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is position of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/touched -->
+
+    <owl:ObjectProperty rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/touched">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/SoccerPlayer"/>
+        <rdfs:range rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Ball"/>
+        <rdfs:comment xml:lang="en">the past tence &quot;touched&quot; indicates that the player is the last player who touched the ball</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">touched</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/SoccerPlayer -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/SoccerPlayer">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/GoalkeeperA"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/GoalkeeperB"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerA1"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerA2"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerA3"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerA4"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerA5"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerA6"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerA7"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerB1"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerB2"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerB3"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerB4"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerB5"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerB6"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerB7"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/hasTeam"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Team"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">the soccer player in a soccer match. We use dbpedia defined concept SoccerPlayer. http://dbpedia.org/ontology/SoccerPlayer</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/position -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/position">
+        <owl:disjointWith rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Observation"/>
+        <owl:disjointWith rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <owl:disjointWith rdf:resource="http://streamreasoning.org/ontologies/frappe#Frame"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Ball"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Record"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Referee"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Team"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/RuiYan/SemanticImportance"/>
+        <rdfs:comment xml:lang="en">We extend dbpedia ontology which defines position: http://dbpedia.org/ontology/position</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">position</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#Observation -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Observation">
+        <owl:disjointWith rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <owl:disjointWith rdf:resource="http://streamreasoning.org/ontologies/frappe#Frame"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/ActivePlay"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Ball"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Record"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Referee"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Team"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/RuiYan/SemanticImportance"/>
+        <rdfs:comment xml:lang="en">We reuse SSN ontology observation class. http://purl.oclc.org/NET/ssnx/ssn#Observation</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor observation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#Sensor -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Sensor">
+        <owl:disjointWith rdf:resource="http://streamreasoning.org/ontologies/frappe#Frame"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/ActivePlay"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Ball"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Record"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Referee"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Team"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/RuiYan/SemanticImportance"/>
+        <rdfs:comment xml:lang="en">We use SSN ontology, which defines what a sensor is. https://www.w3.org/2005/Incubator/ssn/ssnx/ssn#term-Sensor</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/frappe#Frame -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/frappe#Frame">
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/ActivePlay"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Ball"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Record"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Referee"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Team"/>
+        <rdfs:comment xml:lang="en">We re-use the Frame concept in FraPPE ontology. http://streamreasoning.org/ontologies/frappe#Frame
+Balduini M, Della Valle E. FraPPE: a vocabulary to represent heterogeneous spatio-temporal data to support visual analytics[M]//The Semantic Web-ISWC 2015. Springer International Publishing, 2015: 321-328.
+
+We use the frame class to describe all positions on the soccer field within 0.0005 second. The frame class will be used when processing the data, and answering the query.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">frame</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/frappe#samplingTime -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/frappe#samplingTime">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Observation"/>
+        <rdfs:comment xml:lang="en">We reuse FraPPE ontology, which defines sampling time. http://streamreasoning.org/ontologies/frappe#samplingTime
+Balduini M, Della Valle E. FraPPE: a vocabulary to represent heterogeneous spatio-temporal data to support visual analytics[M]//The Semantic Web-ISWC 2015. Springer International Publishing, 2015: 321-328.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sampling timestamp</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/ActivePlay -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/ActivePlay">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/GainingAdvantage"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/InterferingOpponent"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/InterferingPlay"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Record"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Referee"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Team"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/RuiYan/SemanticImportance"/>
+        <rdfs:comment xml:lang="en">Active play is either interfering with play, interfering with an opponent or gaining an advantage by being in that position.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active play</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Attacker -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Attacker">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://dbpedia.org/ontology/SoccerPlayer"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/BallLastToucher"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/hasTeammate"/>
+                                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                                <owl:onClass rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/BallLastToucher"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Defender"/>
+        <rdfs:comment xml:lang="en">An attacker is a player who aims to kick the ball into the opponent&apos;s goal. An attacker is not a defender.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">attacker</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/AttackerAtOffsidePosition -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/AttackerAtOffsidePosition">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Attacker"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/isAt"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/OffsidePosition"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">Attackers, other than the BallToucher, who are at the offside posiiton.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">attacker at offside position</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Ball -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Ball">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SoccerBall"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Record"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Referee"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Team"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/RuiYan/SemanticImportance"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ball</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/BallLastToucher -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/BallLastToucher">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://dbpedia.org/ontology/SoccerPlayer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/touched"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Ball"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">&apos;BallLastToucher&quot; classes describes the player who is the last to touch the ball.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">latest ball toucher</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/BallPosition -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/BallPosition">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://dbpedia.org/ontology/position"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/isPositionOf"/>
+                        <owl:allValuesFrom rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Ball"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/isPositionOf"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Ball"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ball position</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/BallSensor -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/BallSensor">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID10"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID12"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID4"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID8"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ball sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/BallTouch -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/BallTouch">
+        <owl:equivalentClass rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/InterferingPlay"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/InterferingPlay"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/involves"/>
+                        <owl:someValuesFrom rdf:resource="http://dbpedia.org/ontology/SoccerPlayer"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/involves"/>
+                        <owl:someValuesFrom rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Ball"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/involves"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://dbpedia.org/ontology/SoccerPlayer"/>
+                                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Ball"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/ActivePlay"/>
+        <rdfs:comment xml:lang="en">the player touches the ball.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">touch the ball</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Coordinate -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Coordinate">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/X"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Y"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Z"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Observation"/>
+        <rdfs:comment xml:lang="en">a coordinate classes describes the coordinate of players and ball on the pitch.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">position coordinate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Defender -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Defender">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://dbpedia.org/ontology/SoccerPlayer"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Attacker"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">Defender is a player that defends his/her own goal. A defender is not an attacker.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">defender</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/GainingAdvantage -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/GainingAdvantage">
+        <rdfs:subClassOf rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/ActivePlay"/>
+        <rdfs:comment xml:lang="en">gaining an advantage by being in that position means playing a ball
+1. that rebounds or is deflected to him off the goalpost, crossbar or an opponent having been in an offside position.
+2. that rebounds, is deflected or is played to him fromm a deliberate save by an opponent having been in an offside position.
+
+P.S. We won&apos;t implement gain an advantage in this use case since it is very complex to model. We leave it only for the purpose of completeness.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gaining an advantage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Goalkeeper -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Goalkeeper">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://dbpedia.org/ontology/SoccerPlayer"/>
+                    <owl:Class>
+                        <owl:oneOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/GoalkeeperA"/>
+                            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/GoalkeeperB"/>
+                        </owl:oneOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">Goalkeeper class is an enumerate class consisting of the two goalkeepers of the two teams.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">goalkeeper</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/ImportantFrame -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/ImportantFrame">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://streamreasoning.org/ontologies/frappe#Frame"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/hasFrameInfo"/>
+                        <owl:someValuesFrom rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/ActivePlay"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/hasFrameInfo"/>
+                        <owl:allValuesFrom rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/ActivePlay"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://tw.rpi.edu/web/RuiYan/SemanticImportance"/>
+        <rdfs:comment xml:lang="en">important frame contains necessary information that is considered important to help the system answer the query. Important frames will be identified and then preserved in the cache during processing the streamign data.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">semantic important frame</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/InterferingOpponent -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/InterferingOpponent">
+        <rdfs:subClassOf rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/ActivePlay"/>
+        <rdfs:comment xml:lang="en">preventing an opponent from playing or being able to play the ball by &quot;clearly obstructing the opponent’s
+line of vision&quot; or &quot;challenging an opponent for the ball&quot;.
+In our use case, we will work on &quot;challenging an opponent&quot;, which we defined. This class is only for a parent class purpose.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interfering an opponent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/InterferingPlay -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/InterferingPlay">
+        <rdfs:subClassOf rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/ActivePlay"/>
+        <rdfs:comment xml:lang="en">playing or touching the ball passed or touched by teammate.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interfering with play</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/LeftArmSensor -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/LeftArmSensor">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID97"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID99"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">left arm sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/LeftLegSensor -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/LeftLegSensor">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID105"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID13"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID19"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID23"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID47"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID49"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID53"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID57"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID59"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID61"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID63"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID65"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID67"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID69"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID71"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID73"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID75"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">left leg sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/OffsideOffenceAttacker -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/OffsideOffenceAttacker">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/AttackerAtOffsidePosition"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/isInvolvedIn"/>
+                        <owl:someValuesFrom rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/ActivePlay"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/isInvolvedIn"/>
+                        <owl:allValuesFrom rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/ActivePlay"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">An attacker who commits the offside offence</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">attacker who commits an offside offence</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/OffsidePosition -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/OffsidePosition">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://dbpedia.org/ontology/position"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/isNearerToDefenderGoalLineThan"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/BallPosition"/>
+                                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SecondLastDefenderPosition"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/isNearerToDefenderGoalLineThan"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/BallPosition"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/isNearerToDefenderGoalLineThan"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SecondLastDefenderPosition"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">offside position</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/OpponentChallenge -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/OpponentChallenge">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/InterferingOpponent"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/involves"/>
+                        <owl:someValuesFrom rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Attacker"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/involves"/>
+                        <owl:someValuesFrom rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Defender"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/involves"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Attacker"/>
+                                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Defender"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">the attacker challenges the opponent(defender), the result will be computed from the data pre-processing.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">challenging an opponent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Record -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Record">
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Referee"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Team"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/RuiYan/SemanticImportance"/>
+        <rdfs:comment xml:lang="en">The Record class describes one line of the incoming data. The incoming streamin data are csv data. Each line contains &quot;sensor id, timestamp, position x coordinate, position y coordinate, position z coordinate, velocity, acceleration&quot;. We use this class to annoate the incoming data, and don&apos;t define this class because we won&apos;t do any classification on it.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Referee -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Referee">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RefereeA"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Team"/>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/RuiYan/SemanticImportance"/>
+        <rdfs:comment xml:lang="en">The referee enforces the laws of the game, is not a player.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">referee</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RightArmSensor -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RightArmSensor">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID100"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID98"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">right arm sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RightLegSensor -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RightLegSensor">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID106"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID14"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID16"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID24"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID28"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID38"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID40"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID44"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID52"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID54"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID58"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID62"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID64"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID66"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID68"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID74"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID88"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">right leg sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SecondLastDefender -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SecondLastDefender">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Defender"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/isFartherToOwnGoalLineThan"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Defender"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">We define the second last defender as the defender who is farther to his/her own goal line than exactly 1 of his/her teammate is.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">second last defender</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SecondLastDefenderPosition -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SecondLastDefenderPosition">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://dbpedia.org/ontology/position"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/isPositionOf"/>
+                        <owl:allValuesFrom rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SecondLastDefender"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/isPositionOf"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SecondLastDefender"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">second last defender position</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Team -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Team">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/TeamA"/>
+                    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/TeamB"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://tw.rpi.edu/web/RuiYan/SemanticImportance"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">team</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/X -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/X">
+        <rdfs:subClassOf rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Coordinate"/>
+        <rdfs:comment xml:lang="en">we didn&apos;t define this because will use this class only to annotate the sensor position coordinate data. We won&apos;t use this class to perform some reasoning tasks.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">x coordinate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Y -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Y">
+        <rdfs:subClassOf rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Coordinate"/>
+        <rdfs:comment xml:lang="en">we didn&apos;t define this because will use this class only to annotate the sensor position coordinate data. We won&apos;t use this class to perform some reasoning tasks.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">y coordinate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Z -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Z">
+        <rdfs:subClassOf rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Coordinate"/>
+        <rdfs:comment xml:lang="en">we didn&apos;t define this because will use this class only to annotate the sensor position coordinate data. We won&apos;t use this class to perform some reasoning tasks.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">z coordinate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://tw.rpi.edu/web/RuiYan/SemanticImportance -->
+
+    <owl:Class rdf:about="http://tw.rpi.edu/web/RuiYan/SemanticImportance">
+        <rdfs:comment xml:lang="en">semantic importance class annotates important frames to preserve when deal with streaming data. This an important frame is identified if this frame contains players at offside position, or events like ball touch and interfering with play or opponent.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">semantic importance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/GoalKeeperA -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/GoalKeeperA">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerPlayer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">goalkeeper A</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/GoalkeeperA -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/GoalkeeperA">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Goalkeeper"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Goalkeeper in Team A</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">goalkeeper A</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/GoalkeeperB -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/GoalkeeperB">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerPlayer"/>
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Goalkeeper"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">goalkeeper B</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerA1 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerA1">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerPlayer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player A1</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerA2 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerA2">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerPlayer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player A2</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerA3 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerA3">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerPlayer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player A3</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerA4 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerA4">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerPlayer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player A4</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerA5 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerA5">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerPlayer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player A5</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerA6 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerA6">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerPlayer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player A6</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerA7 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerA7">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerPlayer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player A7</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerB1 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerB1">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerPlayer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player B1</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerB2 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerB2">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerPlayer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player B2</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerB3 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerB3">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerPlayer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player B3</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerB4 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerB4">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerPlayer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player B4</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerB5 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerB5">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerPlayer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player B5</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerB6 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerB6">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerPlayer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player B6</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerB7 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/PlayerB7">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerPlayer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player B7</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RefereeA -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RefereeA">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Referee"/>
+        <rdfs:comment xml:lang="en">The only referee in this match. The recorded match is an 8 v 8 match that only has one referee</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">referee</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID10 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID10">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/BallSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ball sensor id 10</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID100 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID100">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RightArmSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">goalkeeper B right arm sensor id 100</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID105 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID105">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/LeftLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">referee left leg sensor id 105</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID106 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID106">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RightLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">referee right leg sensor id 106</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID12 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID12">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/BallSensor"/>
+        <rdfs:comment xml:lang="en">ball sensor id 12 is only used in the second half in the recorded data, other ball sensors are used through out the whole match.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ball sensor id 12</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID13 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID13">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/LeftLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">goalkeeper A left leg sensor id 13</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID14 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID14">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RightLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">goalkeeper A right leg sensor id 14</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID16 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID16">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RightLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player A1 right leg sensor id 16</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID19 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID19">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/LeftLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player A3 left leg sensor id 19</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID23 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID23">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/LeftLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player A5 left leg sensor id 23</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID24 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID24">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RightLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player A5 right leg sensor id 24</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID28 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID28">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RightLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player A7 right leg sensor id 28</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID38 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID38">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RightLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player B4 right leg sensor id 38</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID4 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID4">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/BallSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ball sensor id 4</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID40 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID40">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RightLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player B5 right leg sensor id 40</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID44 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID44">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RightLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player B7 right leg sensor id 44</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID47 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID47">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/LeftLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player A1 left leg sensor id 47</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID49 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID49">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/LeftLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player A2 left leg sensor id 49</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID52 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID52">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RightLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player A3 right leg sensor id 52</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID53 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID53">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/LeftLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player A4 left leg sensor id 53</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID54 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID54">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RightLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player A4 right leg sensor id 54</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID57 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID57">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/LeftLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player A6 left leg sensor id 57</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID58 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID58">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RightLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player A6 right leg sensor id 58</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID59 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID59">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/LeftLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player A7 left leg sensor id 59</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID61 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID61">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/LeftLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">goalkeeper B left leg sensor id 61</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID62 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID62">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RightLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">goalkeeper B right leg sensor id 62</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID63 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID63">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/LeftLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player B1 left leg sensor id 63</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID64 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID64">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RightLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player B1 right leg sensor id 64</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID65 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID65">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/LeftLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player B2 left leg sensor id 65</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID66 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID66">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RightLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player B2 right leg sensor id 66</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID67 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID67">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/LeftLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player B3 left leg sensor id 67</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID68 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID68">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RightLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player B3 right leg sensor id 68</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID69 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID69">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/LeftLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player B4 left leg sensor id 69</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID71 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID71">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/LeftLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player B5 left leg sensor id 71</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID73 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID73">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/LeftLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player B6 left leg sensor id 73</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID74 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID74">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RightLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player B6 right leg sensor id 74</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID75 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID75">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/LeftLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player B7 left leg sensor id 75</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID8 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID8">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/BallSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ball sensor id 8</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID88 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID88">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RightLegSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player A2 right leg sensor id 88</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID97 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID97">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/LeftArmSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">goalkeeper A left arm sensor id 97</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID98 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID98">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RightArmSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">goalkeeper A right arm sensor id 98</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID99 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID99">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/LeftArmSensor"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">goalkeeper B left arm sensor id 99</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SoccerBall -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SoccerBall">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Ball"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ball</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/TeamA -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/TeamA">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Team"/>
+        <rdfs:comment xml:lang="en">Team A, different from Team B</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">team A</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/TeamB -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/TeamB">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/Team"/>
+        <rdfs:comment xml:lang="en">Team B, different from Team A</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">team B</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/BallSensor"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/LeftArmSensor"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/LeftLegSensor"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RightArmSensor"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/RightLegSensor"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/GainingAdvantage"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/InterferingOpponent"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/InterferingPlay"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID10"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID12"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID4"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID8"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID100"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID98"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID105"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID13"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID19"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID23"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID47"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID49"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID53"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID57"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID59"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID61"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID63"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID65"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID67"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID69"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID71"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID73"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID75"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID106"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID14"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID16"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID24"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID28"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID38"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID40"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID44"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID52"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID54"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID58"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID62"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID64"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID66"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID68"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID74"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID88"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID97"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/SID99"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/TeamA"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_6_Soccer_Offside/TeamB"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
+

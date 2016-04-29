@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY dct "http://purl.org/dc/terms/" >
+    <!ENTITY Soccer_Offside "http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/" >
+]>
+
+<rdf:RDF xmlns="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#"
+     xml:base="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals"
+     xmlns:dct="http://purl.org/dc/terms/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Soccer_Offside="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/">
+    <owl:Ontology rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals">
+        <owl:versionIRI rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals/1.0.0"/>
+        <owl:imports rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/2.0.0"/>
+        <rdfs:comment xml:lang="en">This ontology is created on 4/2/2016, with the aim to test the soccer offside ontology. This ontology provides several test cases of individuals to test the following aspects:
+1. given one attacking player who touches the ball, infer other attackers
+2. given one attacking player who touches the ball, infer who are defenders
+3. given who is the second last player, infer who is second last defender
+4. given the player position and ball positoin, infer which player is at offside position
+5. given the &quot;player invovles active play&quot;, infer the player commits offside offence.</rdfs:comment>
+        
+        <dct:creator>Rui Yan</dct:creator>
+        <dct:creator>Hao Zhong</dct:creator>
+    </owl:Ontology>
+    
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#OpponentChallenge -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#OpponentChallenge">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/ActivePlay"/>
+        <rdfs:comment xml:lang="en">opponent challenge is one of active play</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">challenges opponent</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerA1 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerA1">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/Player"/>
+        <Soccer_Offside:hasTeam rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/TeamA"/>
+        <Soccer_Offside:hasTeammate rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerA3"/>
+        <Soccer_Offside:involves rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#OpponentChallenge"/>
+        <rdfs:comment xml:lang="en">PlayerA1 is expected to be classified as &quot;BallLastToucherTeammate&quot; (which is the subClassOf &quot;Attacker&quot;) and &quot;OffsidePlayer&quot;.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player A1, plays for Team A</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerA2 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerA2">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/Player"/>
+        <Soccer_Offside:hasTeam rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/TeamA"/>
+        <Soccer_Offside:hasTeammate rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerA1"/>
+        <Soccer_Offside:touch rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/SoccerBall"/>
+        <rdfs:comment xml:lang="en">PlayerA2 is annotated with &quot;touch ball&quot; from our data processing program.
+PlayerA2 is exptected to be classified as &quot;BallLastToucher&quot; and &quot;BallLastToucherTeammate&quot; (we consider PlayerA2 is him/her self teammate, due to the property &quot;hasTeammate&quot; is transitive and symmetric.)
+(In our program, we rank players according to ball-player distance, the closest player with a distance &lt; 1m is annotated with &quot;:touch SoccerBall&quot;. )</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player A2, plays for Team A</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerA3 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerA3">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/Player"/>
+        <Soccer_Offside:hasTeam rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/TeamA"/>
+        <Soccer_Offside:hasTeammate rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerA2"/>
+        <rdfs:comment xml:lang="en">PlayerA3 is expected to be classified as a &quot;BallLastToucherTeammate&quot;.(which is the subclass of &quot;Attacker&quot;)</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player A3, plays for Team A</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerB1 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerB1">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/Player"/>
+        <Soccer_Offside:hasTeam rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/TeamB"/>
+        <Soccer_Offside:hasTeammate rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerB2"/>
+        <rdfs:comment xml:lang="en">PlayerB1 is exptected to be classified as a &quot;Defender&quot;</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player B1, plays for team B</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerB2 -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerB2">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/Player"/>
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/SecondLastPlayer"/>
+        <Soccer_Offside:hasTeam rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/TeamB"/>
+        <rdfs:comment xml:lang="en">PlayerB2 is expected to be classified as &quot;SecondLastDefender&quot;.
+PlayerB2 is annotated by our program as &quot;SecondLastPlayer&quot; of TeamB. 
+(Our program will rank each team&apos;s players by the distance between every single of them to their own goal line. The second shortest player will be annotated as &quot;SecondLastPlayer&quot;. This also solutes to the real world scenario where the assistant referee should always keep up with the second last player of assistant referee&apos;s half.)</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player B2, plays for team B</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#ballposition -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#ballposition">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/Position"/>
+        <Soccer_Offside:isPositionOf rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/SoccerBall"/>
+        <rdfs:comment xml:lang="en">ballposition is expected to be classified as &quot;BallPosition&quot;.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#offsideposition -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#offsideposition">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/Position"/>
+        <Soccer_Offside:isNearerToDefenderGoalLineThan rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#ballposition"/>
+        <Soccer_Offside:isNearerToDefenderGoalLineThan rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#sldposition"/>
+        <Soccer_Offside:isPositionOf rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerA1"/>
+        <rdfs:comment xml:lang="en">offsideposition is expected to be classified as &quot;OffsidePosition&quot;.
+offsideposition is annotated as &quot;:isPositionOf :PlayerA1&quot;, &quot;:isNearerToDefenderGaolLineThan :ballposition&quot;, &quot;isNearerToDefenderGoalLineThan :sldposition.&quot;.
+From our program, we can do position computation to annotate the above.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#sldposition -->
+
+    <owl:NamedIndividual rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#sldposition">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/Position"/>
+        <Soccer_Offside:isPositionOf rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerB2"/>
+        <rdfs:comment xml:lang="en">sldposition is expected to be classified as &quot;SecondLastDefenderPosition&quot;.
+sldposition will be annotated as &quot;:isPositionOf PlayerB2&quot; directly from the sensor data.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/TeamA -->
+
+    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/TeamA">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/AttackerTeam"/>
+        <rdfs:comment xml:lang="en">We directly annotate TeamA as &quot;AttackerTeam&quot;. 
+In our data processing program, we can compute which team is attacking: we rank all players by ball-player distance, the team of the player with the shortest distance is annotated as &quot;AttackerTeam&quot;, the other team is annotated as &quot;DefenderTeam&quot;. (Since an &quot;AttackerTeam&quot; will become a &quot;DefenderTeam&quot; some seconds later for sure, we will update &quot;AttackerTeam&quot; and &quot;DefenderTeam&quot; in real-time)</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/TeamB -->
+
+    <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/TeamB">
+        <rdf:type rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/DefenderTeam"/>
+        <rdfs:comment xml:lang="en">TeamB is annotated as &quot;DefenderTeam&quot;.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerA1"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerA2"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerA1"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerA3"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerA1"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerB1"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerA1"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerB2"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerA2"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerA3"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerA2"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerB1"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerA2"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerB2"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerA3"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerB1"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerA3"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerB2"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerB1"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#PlayerB2"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#ballposition"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#offsideposition"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#ballposition"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#sldposition"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#offsideposition"/>
+            <rdf:Description rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_8_Soccer_Offside_Individuals#sldposition"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
+
