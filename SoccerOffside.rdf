@@ -8,14 +8,15 @@
     <!ENTITY dct "http://purl.org/dc/terms/" >
     <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
     <!ENTITY dbo "http://dbpedia.org/ontology/">
-    <!ENTITY so "http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/" >    
+    <!ENTITY so "http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_12_Soccer_Offside/" >    
+    <!ENTITY sm "http://www.omg.org/techprocess/ab/SpecificationMetadata/" >
     <!ENTITY fibo-fnd-utl-av "http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/" >
     <!ENTITY fibo-fnd-org-org "http://www.omg.org/spec/EDMC-FIBO/FND/Organizations/Organizations/" >
     <!ENTITY fibo-fnd-aap-ppl "http://www.omg.org/spec/EDMC-FIBO/FND/AgentsAndPeople/People/" >
     <!ENTITY fibo-fnd-pla-loc "http://www.omg.org/spec/EDMC-FIBO/FND/Places/Locations/Location/" >
 ]>
 
-<rdf:RDF xml:base="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/"
+<rdf:RDF xml:base="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_12_Soccer_Offside/"
      xmlns:dct="http://purl.org/dc/terms/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -24,13 +25,14 @@
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:dbo="http://dbpedia.org/ontology/"
-     xmlns:so="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/"
+     xmlns:so="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_12_Soccer_Offside/"
+     xmlns:sm="http://www.omg.org/techprocess/ab/SpecificationMetadata/"
      xmlns:fibo-fnd-utl-av="http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/"
      xmlns:fibo-fnd-org-org="http://www.omg.org/spec/EDMC-FIBO/FND/Organizations/Organizations/"
      xmlns:fibo-fnd-aap-ppl="http://www.omg.org/spec/EDMC-FIBO/FND/AgentsAndPeople/People/"
      xmlns:fibo-fnd-pla-loc="http://www.omg.org/spec/EDMC-FIBO/FND/Places/Locations/Location/" >
 
-    <owl:Ontology rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/">
+    <owl:Ontology rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_12_Soccer_Offside/">
 
         <dct:publisher>Soccer Offside Team</dct:publisher>
 
@@ -43,18 +45,22 @@
 
         <dct:modified>2016-04-29</dct:modified>
         
-        <owl:versionIRI rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/3.1.0/"/>
+        <owl:versionIRI rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/3.2.0/"/>
         
-        <owl:priorVersion rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/3.0.0/"/>
+        <owl:priorVersion rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/3.1.0/"/>
         
         <skos:changeNote xml:lang="en">
-        We define class Ball, Player, Referee as enumerated classes. That is why our main ontology contains the individuals. As we have scoped down our use case to analyze this particular soccer match, which players, teams and balls are used can be regarded as background information thus reasonably encoded in the ontology. We added BackupBall, InFieldBall concept to distinguish the balls. Modern soccer match use multiple balls. We added classes DefenderButNotSecondLastDefender, NotSecondLastPlayer to explicitly let the reasoner distinguish different types of players. We leverage open world assumption to design these classes. We added AttackerPosition, DefenderPosition, GlovePosition, OwnHalfPosition and OffsideIrrelevantPositions to facilitate the system to identify important information using semantics.
+        We updated the licence. 
         </skos:changeNote>
+
+        <sm:copyright rdf:datatype="&xsd;string">Copyright (c) 2016 Rui Yan, Hao Zhong</sm:copyright>
+        <dct:license rdf:resource="&sm;MITLicense"/>
 
         <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
         <owl:imports rdf:resource="http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/"/>
         <owl:imports rdf:resource="http://www.omg.org/spec/EDMC-FIBO/FND/Organizations/Organizations/"/>
         <owl:imports rdf:resource="http://www.omg.org/spec/EDMC-FIBO/FND/AgentsAndPeople/People/"/>
+        <owl:imports rdf:resource="http://www.omg.org/techprocess/ab/SpecificationMetadata/"/>
 
     </owl:Ontology>
 

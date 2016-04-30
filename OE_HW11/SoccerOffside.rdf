@@ -41,7 +41,7 @@
         The use case aims to assist referees to determine if an offside offense is committed by the attacking players, and increase the judgement precision.
         </dct:abstract>
 
-        <dct:modified>2016-04-22</dct:modified>
+        <dct:modified>2016-04-29</dct:modified>
         
         <owl:versionIRI rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/3.1.0/"/>
         
