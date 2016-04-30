@@ -2,109 +2,45 @@
 
 
 <!DOCTYPE rdf:RDF [
-    <!ENTITY terms "http://purl.org/dc/terms/" >
+    <!ENTITY dct "http://purl.org/dc/terms/" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY so "http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/" >
     <!ENTITY soi "http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/" >
+
 ]>
 
 
 <rdf:RDF xml:base="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:soi="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/"
+     xmlns:soi="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/"     
      xmlns:so="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/"
-     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:dct="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <owl:Ontology rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/">
         
-        <terms:contributor rdf:datatype="&xsd;string">Hao Zhong</terms:contributor>
-        <terms:contributor rdf:datatype="&xsd;string">Rui Yan</terms:contributor>
+        <dct:abstract>The use case aims to assist referees to determine if an offside offense is committed by the attacking players, and increase the judgement precision.</dct:abstract>
         
-        <terms:publisher rdf:datatype="&xsd;string">Soccer Offside Team</terms:publisher>
+        <dct:contributor>Rui Yan</dct:contributor>
+        <dct:publisher>Soccer Offside Team</dct:publisher>
+        <dct:contributor>Hao Zhong</dct:contributor>
         
-        <terms:abstract rdf:datatype="&xsd;string">The use case aims to assist referees to determine if an offside offense is committed by the attacking players, and increase the judgement precision.</terms:abstract>
-
-        <owl:versionIRI rdf:resource="&soi;3.1.0/"/>
+        <owl:priorVersion>http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_9_Soccer_Offside_Individuals/2.1.0/</owl:priorVersion>
         
-        <owl:priorVersion rdf:datatype="&xsd;string">http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_9_Soccer_Offside_Individuals/2.1.0/</owl:priorVersion>
+        <dct:modified>2016-4-29</dct:modified>
+        
+        <owl:imports rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/"/>
+        
+        <owl:versionIRI rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/3.0.0"/>
         
         <skos:changeNote rdf:datatype="&xsd;string">in this version, we annotated the individuals of players, positions and balls to describe a scenario where the offside offence foul happens.</skos:changeNote>
-        
-        <terms:modified>2016-4-23</terms:modified>
-        
-        <owl:imports rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/"/>        
     </owl:Ontology>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotation properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/hasPosition -->
-
-    <owl:AnnotationProperty rdf:about="&so;hasPosition"/>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/isInvolvedIn -->
-
-    <owl:AnnotationProperty rdf:about="&so;isInvolvedIn"/>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/isNearerToDefenderGoalLineThan -->
-
-    <owl:AnnotationProperty rdf:about="&so;isNearerToDefenderGoalLineThan"/>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/touches -->
-
-    <owl:AnnotationProperty rdf:about="&so;touches"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- AnnotationProperty -->
-
-    <owl:Class rdf:about="AnnotationProperty"/>
-    
-
-
-    <!-- Class -->
-
-    <owl:Class rdf:about="Class"/>
-    
-
-
-    <!-- NamedIndividual -->
-
-    <owl:Class rdf:about="NamedIndividual"/>
     
 
 
@@ -119,189 +55,10 @@
     
 
 
-    <!-- http://purl.org/dc/terms/abstract -->
-
-    <owl:NamedIndividual rdf:about="&terms;abstract">
-        <rdf:type rdf:resource="AnnotationProperty"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/dc/terms/bibliographicCitation -->
-
-    <owl:NamedIndividual rdf:about="&terms;bibliographicCitation">
-        <rdf:type rdf:resource="AnnotationProperty"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/dc/terms/contributor -->
-
-    <owl:NamedIndividual rdf:about="&terms;contributor">
-        <rdf:type rdf:resource="AnnotationProperty"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/dc/terms/creator -->
-
-    <owl:NamedIndividual rdf:about="&terms;creator">
-        <rdf:type rdf:resource="AnnotationProperty"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/dc/terms/format -->
-
-    <owl:NamedIndividual rdf:about="&terms;format">
-        <rdf:type rdf:resource="AnnotationProperty"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/dc/terms/hasVersion -->
-
-    <owl:NamedIndividual rdf:about="&terms;hasVersion">
-        <rdf:type rdf:resource="AnnotationProperty"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/dc/terms/identifier -->
-
-    <owl:NamedIndividual rdf:about="&terms;identifier">
-        <rdf:type rdf:resource="AnnotationProperty"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/dc/terms/issued -->
-
-    <owl:NamedIndividual rdf:about="&terms;issued">
-        <rdf:type rdf:resource="AnnotationProperty"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/dc/terms/license -->
-
-    <owl:NamedIndividual rdf:about="&terms;license">
-        <rdf:type rdf:resource="AnnotationProperty"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/dc/terms/references -->
-
-    <owl:NamedIndividual rdf:about="&terms;references">
-        <rdf:type rdf:resource="AnnotationProperty"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/dc/terms/rights -->
-
-    <owl:NamedIndividual rdf:about="&terms;rights">
-        <rdf:type rdf:resource="AnnotationProperty"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/dc/terms/source -->
-
-    <owl:NamedIndividual rdf:about="&terms;source">
-        <rdf:type rdf:resource="AnnotationProperty"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/dc/terms/subject -->
-
-    <owl:NamedIndividual rdf:about="&terms;subject">
-        <rdf:type rdf:resource="AnnotationProperty"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/dc/terms/title -->
-
-    <owl:NamedIndividual rdf:about="&terms;title">
-        <rdf:type rdf:resource="AnnotationProperty"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/dc/terms/type -->
-
-    <owl:NamedIndividual rdf:about="&terms;type">
-        <rdf:type rdf:resource="AnnotationProperty"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/BackupBall -->
-
-    <owl:NamedIndividual rdf:about="&so;BackupBall">
-        <rdf:type rdf:resource="Class"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/GlovePosition -->
-
-    <owl:NamedIndividual rdf:about="&so;GlovePosition">
-        <rdf:type rdf:resource="Class"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/InFieldBall -->
-
-    <owl:NamedIndividual rdf:about="&so;InFieldBall">
-        <rdf:type rdf:resource="Class"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/NotSecondLastPlayer -->
-
-    <owl:NamedIndividual rdf:about="&so;NotSecondLastPlayer">
-        <rdf:type rdf:resource="Class"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/OwnHalfPosition -->
-
-    <owl:NamedIndividual rdf:about="&so;OwnHalfPosition">
-        <rdf:type rdf:resource="Class"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/Position -->
-
-    <owl:NamedIndividual rdf:about="&so;Position">
-        <rdf:type rdf:resource="Class"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/SecondLastPlayer -->
-
-    <owl:NamedIndividual rdf:about="&so;SecondLastPlayer">
-        <rdf:type rdf:resource="Class"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/ball10 -->
 
     <rdf:Description rdf:about="&so;ball10">
-        <rdf:type rdf:resource="NamedIndividual"/>
         <rdf:type rdf:resource="&so;BackupBall"/>
-        <rdfs:comment xml:lang="en">ball 10 is a backup ball that is out of the field.</rdfs:comment>
-        <so:hasPosition rdf:resource="&soi;ball10position"/>
     </rdf:Description>
     
 
@@ -309,10 +66,7 @@
     <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/ball12 -->
 
     <rdf:Description rdf:about="&so;ball12">
-        <rdf:type rdf:resource="NamedIndividual"/>
         <rdf:type rdf:resource="&so;BackupBall"/>
-        <rdfs:comment xml:lang="en">ball 12 is a backup ball that is out of the field.</rdfs:comment>
-        <so:hasPosition rdf:resource="&soi;ball12position"/>
     </rdf:Description>
     
 
@@ -320,10 +74,7 @@
     <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/ball4 -->
 
     <rdf:Description rdf:about="&so;ball4">
-        <rdf:type rdf:resource="NamedIndividual"/>
         <rdf:type rdf:resource="&so;InFieldBall"/>
-        <rdfs:comment xml:lang="en">ball4 is marked being played now in the field.</rdfs:comment>
-        <so:hasPosition rdf:resource="&soi;ball4position"/>
     </rdf:Description>
     
 
@@ -331,10 +82,7 @@
     <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/ball8 -->
 
     <rdf:Description rdf:about="&so;ball8">
-        <rdf:type rdf:resource="NamedIndividual"/>
         <rdf:type rdf:resource="&so;BackupBall"/>
-        <rdfs:comment xml:lang="en">ball 8 is a backup ball that is out of the field.</rdfs:comment>
-        <so:hasPosition rdf:resource="&soi;ball8position"/>
     </rdf:Description>
     
 
@@ -342,19 +90,7 @@
     <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/goalkeeper_A -->
 
     <rdf:Description rdf:about="&so;goalkeeper_A">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;NotSecondLastPlayer"/>
-        <so:hasPosition rdf:resource="&soi;goalkeeper_Aposition"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/goalkeeper_B -->
-
-    <rdf:Description rdf:about="&so;goalkeeper_B">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;NotSecondLastPlayer"/>
-        <so:hasPosition rdf:resource="&soi;goalkeeper_Bposition"/>
+        <so:isOpponentOf rdf:resource="&so;goalkeeper_B"/>
     </rdf:Description>
     
 
@@ -362,12 +98,11 @@
     <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/player_A1 -->
 
     <rdf:Description rdf:about="&so;player_A1">
-        <rdf:type rdf:resource="NamedIndividual"/>
         <rdf:type rdf:resource="&so;NotSecondLastPlayer"/>
         <so:isNearerToDefenderGoalLineThan rdf:resource="&so;ball4"/>
         <so:isInvolvedIn rdf:resource="&so;opponent_challenge"/>
-        <so:isNearerToDefenderGoalLineThan rdf:resource="&so;player_B6"/>
-        <so:hasPosition rdf:resource="&soi;player_A1position"/>
+        <so:isNearerToDefenderGoalLineThan rdf:resource="&so;player_B2"/>
+        <so:hasPosition rdf:resource="&soi;player_A1_position"/>
     </rdf:Description>
     
 
@@ -375,10 +110,9 @@
     <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/player_A2 -->
 
     <rdf:Description rdf:about="&so;player_A2">
-        <rdf:type rdf:resource="NamedIndividual"/>
         <rdf:type rdf:resource="&so;NotSecondLastPlayer"/>
         <so:touches rdf:resource="&so;ball4"/>
-        <so:hasPosition rdf:resource="&soi;player_A2position"/>
+        <so:hasPosition rdf:resource="&soi;player_A2_position"/>
     </rdf:Description>
     
 
@@ -386,49 +120,8 @@
     <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/player_A3 -->
 
     <rdf:Description rdf:about="&so;player_A3">
-        <rdf:type rdf:resource="NamedIndividual"/>
         <rdf:type rdf:resource="&so;NotSecondLastPlayer"/>
-        <so:hasPosition rdf:resource="&soi;player_A3position"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/player_A4 -->
-
-    <rdf:Description rdf:about="&so;player_A4">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;NotSecondLastPlayer"/>
-        <so:hasPosition rdf:resource="&soi;player_A4position"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/player_A5 -->
-
-    <rdf:Description rdf:about="&so;player_A5">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;NotSecondLastPlayer"/>
-        <so:hasPosition rdf:resource="&soi;player_A5positioin"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/player_A6 -->
-
-    <rdf:Description rdf:about="&so;player_A6">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;SecondLastPlayer"/>
-        <so:hasPosition rdf:resource="&soi;player_A6position"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/player_A7 -->
-
-    <rdf:Description rdf:about="&so;player_A7">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;NotSecondLastPlayer"/>
-        <so:hasPosition rdf:resource="&soi;player_A7position"/>
+        <so:hasPosition rdf:resource="&soi;player_A3_position"/>
     </rdf:Description>
     
 
@@ -436,9 +129,8 @@
     <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/player_B1 -->
 
     <rdf:Description rdf:about="&so;player_B1">
-        <rdf:type rdf:resource="NamedIndividual"/>
         <rdf:type rdf:resource="&so;NotSecondLastPlayer"/>
-        <so:hasPosition rdf:resource="&soi;player_B1position"/>
+        <so:hasPosition rdf:resource="&soi;player_B1_position"/>
     </rdf:Description>
     
 
@@ -446,9 +138,8 @@
     <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/player_B2 -->
 
     <rdf:Description rdf:about="&so;player_B2">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;NotSecondLastPlayer"/>
-        <so:hasPosition rdf:resource="&soi;player_B2position"/>
+        <rdf:type rdf:resource="&so;SecondLastPlayer"/>
+        <so:hasPosition rdf:resource="&soi;player_B2_position"/>
     </rdf:Description>
     
 
@@ -456,378 +147,57 @@
     <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/player_B3 -->
 
     <rdf:Description rdf:about="&so;player_B3">
-        <rdf:type rdf:resource="NamedIndividual"/>
         <rdf:type rdf:resource="&so;NotSecondLastPlayer"/>
-        <so:hasPosition rdf:resource="&soi;player_B3position"/>
+        <so:hasPosition rdf:resource="&soi;player_B3_position"/>
     </rdf:Description>
     
 
 
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/player_B4 -->
+    <!-- &soi;player_A1_position -->
 
-    <rdf:Description rdf:about="&so;player_B4">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;NotSecondLastPlayer"/>
-        <so:hasPosition rdf:resource="&soi;player_B4position"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/player_B5 -->
-
-    <rdf:Description rdf:about="&so;player_B5">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;NotSecondLastPlayer"/>
-        <so:hasPosition rdf:resource="&soi;player_B5position"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/player_B6 -->
-
-    <rdf:Description rdf:about="&so;player_B6">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;SecondLastPlayer"/>
-        <so:hasPosition rdf:resource="&soi;player_B6position"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/player_B7 -->
-
-    <rdf:Description rdf:about="&so;player_B7">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;NotSecondLastPlayer"/>
-        <so:hasPosition rdf:resource="&soi;player_B7position"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/ball10position -->
-
-    <owl:NamedIndividual rdf:about="&soi;ball10position">
-        <rdf:type rdf:resource="NamedIndividual"/>
+    <owl:NamedIndividual rdf:about="&soi;player_A1_position">
         <rdf:type rdf:resource="&so;Position"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/ball12position -->
+    <!-- &soi;player_A2_position -->
 
-    <owl:NamedIndividual rdf:about="&soi;ball12position">
-        <rdf:type rdf:resource="NamedIndividual"/>
+    <owl:NamedIndividual rdf:about="&soi;player_A2_position">
         <rdf:type rdf:resource="&so;Position"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/ball4position -->
+    <!-- &soi;player_A3_position -->
 
-    <owl:NamedIndividual rdf:about="&soi;ball4position">
-        <rdf:type rdf:resource="NamedIndividual"/>
+    <owl:NamedIndividual rdf:about="&soi;player_A3_position">
         <rdf:type rdf:resource="&so;Position"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/ball8position -->
+    <!-- &soi;player_B1_position -->
 
-    <owl:NamedIndividual rdf:about="&soi;ball8position">
-        <rdf:type rdf:resource="NamedIndividual"/>
+    <owl:NamedIndividual rdf:about="&soi;player_B1_position">
         <rdf:type rdf:resource="&so;Position"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/goalkeeper_A_left_glove_position -->
+    <!-- &soi;player_B2_position -->
 
-    <owl:NamedIndividual rdf:about="&soi;goalkeeper_A_left_glove_position">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;GlovePosition"/>
+    <owl:NamedIndividual rdf:about="&soi;player_B2_position">
         <rdf:type rdf:resource="&so;Position"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/goalkeeper_A_right_glove_position -->
+    <!-- &soi;player_B3_position -->
 
-    <owl:NamedIndividual rdf:about="&soi;goalkeeper_A_right_glove_position">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;GlovePosition"/>
+    <owl:NamedIndividual rdf:about="&soi;player_B3_position">
         <rdf:type rdf:resource="&so;Position"/>
     </owl:NamedIndividual>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/goalkeeper_Aposition -->
-
-    <owl:NamedIndividual rdf:about="&soi;goalkeeper_Aposition">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;OwnHalfPosition"/>
-        <rdf:type rdf:resource="&so;Position"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/goalkeeper_B_left_glove_position -->
-
-    <owl:NamedIndividual rdf:about="&soi;goalkeeper_B_left_glove_position">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;GlovePosition"/>
-        <rdf:type rdf:resource="&so;Position"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/goalkeeper_B_right_glove_position -->
-
-    <owl:NamedIndividual rdf:about="&soi;goalkeeper_B_right_glove_position">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;GlovePosition"/>
-        <rdf:type rdf:resource="&so;Position"/>
-        <rdfs:label rdf:datatype="&xsd;string">goalkeeper_ b&apos;s right glove position</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/goalkeeper_Bposition -->
-
-    <owl:NamedIndividual rdf:about="&soi;goalkeeper_Bposition">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;OwnHalfPosition"/>
-        <rdf:type rdf:resource="&so;Position"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/player_A1position -->
-
-    <owl:NamedIndividual rdf:about="&soi;player_A1position">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;Position"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/player_A2position -->
-
-    <owl:NamedIndividual rdf:about="&soi;player_A2position">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;Position"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/player_A3position -->
-
-    <owl:NamedIndividual rdf:about="&soi;player_A3position">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;Position"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/player_A4position -->
-
-    <owl:NamedIndividual rdf:about="&soi;player_A4position">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;OwnHalfPosition"/>
-        <rdf:type rdf:resource="&so;Position"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/player_A5positioin -->
-
-    <owl:NamedIndividual rdf:about="&soi;player_A5positioin">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;OwnHalfPosition"/>
-        <rdf:type rdf:resource="&so;Position"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/player_A6position -->
-
-    <owl:NamedIndividual rdf:about="&soi;player_A6position">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;OwnHalfPosition"/>
-        <rdf:type rdf:resource="&so;Position"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/player_A7position -->
-
-    <owl:NamedIndividual rdf:about="&soi;player_A7position">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;OwnHalfPosition"/>
-        <rdf:type rdf:resource="&so;Position"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/player_B1position -->
-
-    <owl:NamedIndividual rdf:about="&soi;player_B1position">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;Position"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/player_B2position -->
-
-    <owl:NamedIndividual rdf:about="&soi;player_B2position">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;OwnHalfPosition"/>
-        <rdf:type rdf:resource="&so;Position"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/player_B3position -->
-
-    <owl:NamedIndividual rdf:about="&soi;player_B3position">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;OwnHalfPosition"/>
-        <rdf:type rdf:resource="&so;Position"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/player_B4position -->
-
-    <owl:NamedIndividual rdf:about="&soi;player_B4position">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;OwnHalfPosition"/>
-        <rdf:type rdf:resource="&so;Position"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/player_B5position -->
-
-    <owl:NamedIndividual rdf:about="&soi;player_B5position">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;OwnHalfPosition"/>
-        <rdf:type rdf:resource="&so;Position"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/player_B6position -->
-
-    <owl:NamedIndividual rdf:about="&soi;player_B6position">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;OwnHalfPosition"/>
-        <rdf:type rdf:resource="&so;Position"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/player_B7position -->
-
-    <owl:NamedIndividual rdf:about="&soi;player_B7position">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;OwnHalfPosition"/>
-        <rdf:type rdf:resource="&so;Position"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/refereeposition -->
-
-    <owl:NamedIndividual rdf:about="&soi;refereeposition">
-        <rdf:type rdf:resource="NamedIndividual"/>
-        <rdf:type rdf:resource="&so;Position"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
-
-    <owl:NamedIndividual rdf:about="&skos;altLabel">
-        <rdf:type rdf:resource="AnnotationProperty"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#changeNote -->
-
-    <owl:NamedIndividual rdf:about="&skos;changeNote">
-        <rdf:type rdf:resource="AnnotationProperty"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#definition -->
-
-    <owl:NamedIndividual rdf:about="&skos;definition">
-        <rdf:type rdf:resource="AnnotationProperty"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#editorialNote -->
-
-    <owl:NamedIndividual rdf:about="&skos;editorialNote">
-        <rdf:type rdf:resource="AnnotationProperty"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#example -->
-
-    <owl:NamedIndividual rdf:about="&skos;example">
-        <rdf:type rdf:resource="AnnotationProperty"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#historyNote -->
-
-    <owl:NamedIndividual rdf:about="&skos;historyNote">
-        <rdf:type rdf:resource="AnnotationProperty"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#note -->
-
-    <owl:NamedIndividual rdf:about="&skos;note">
-        <rdf:type rdf:resource="AnnotationProperty"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
-
-    <owl:NamedIndividual rdf:about="&skos;prefLabel">
-        <rdf:type rdf:resource="AnnotationProperty"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#scopeNote -->
-
-    <owl:NamedIndividual rdf:about="&skos;scopeNote">
-        <rdf:type rdf:resource="AnnotationProperty"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotations
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description rdf:about="&so;referee">
-        <so:hasPosition rdf:resource="&soi;refereeposition"/>
-    </rdf:Description>
 </rdf:RDF>
 
 
