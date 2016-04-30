@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dct "http://purl.org/dc/terms/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY so "http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/" >
+    <!ENTITY soi "http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/" >
+    <!ENTITY sm "http://www.omg.org/techprocess/ab/SpecificationMetadata/" >
+]>
+
+
+<rdf:RDF xml:base="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:soi="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/"     
+     xmlns:so="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/"
+     xmlns:sm="http://www.omg.org/techprocess/ab/SpecificationMetadata/"
+     xmlns:dct="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/">
+        
+        <dct:abstract>The use case aims to assist referees to determine if an offside offense is committed by the attacking players, and increase the judgement precision.</dct:abstract>
+        
+        <dct:contributor>Rui Yan</dct:contributor>
+        <dct:publisher>Soccer Offside Team</dct:publisher>
+        <dct:contributor>Hao Zhong</dct:contributor>
+        
+        <owl:priorVersion>http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_9_Soccer_Offside_Individuals/3.0.0/</owl:priorVersion>
+        
+        <dct:modified>2016-4-29</dct:modified>
+        
+        <owl:imports rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/"/>
+        
+        <owl:versionIRI rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/3.1.0"/>
+
+                <sm:copyright rdf:datatype="&xsd;string">Copyright (c) 2016 Rui Yan, Hao Zhong</sm:copyright>
+        <dct:license rdf:resource="&sm;MITLicense"/>
+        
+        <skos:changeNote rdf:datatype="&xsd;string">we udpated the licence</skos:changeNote>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/ball10 -->
+
+    <rdf:Description rdf:about="&so;ball10">
+        <rdf:type rdf:resource="&so;BackupBall"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/ball12 -->
+
+    <rdf:Description rdf:about="&so;ball12">
+        <rdf:type rdf:resource="&so;BackupBall"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/ball4 -->
+
+    <rdf:Description rdf:about="&so;ball4">
+        <rdf:type rdf:resource="&so;InFieldBall"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/ball8 -->
+
+    <rdf:Description rdf:about="&so;ball8">
+        <rdf:type rdf:resource="&so;BackupBall"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/goalkeeper_A -->
+
+    <rdf:Description rdf:about="&so;goalkeeper_A">
+        <so:isOpponentOf rdf:resource="&so;goalkeeper_B"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/player_A1 -->
+
+    <rdf:Description rdf:about="&so;player_A1">
+        <rdf:type rdf:resource="&so;NotSecondLastPlayer"/>
+        <so:isNearerToDefenderGoalLineThan rdf:resource="&so;ball4"/>
+        <so:isInvolvedIn rdf:resource="&so;opponent_challenge"/>
+        <so:isNearerToDefenderGoalLineThan rdf:resource="&so;player_B2"/>
+        <so:hasPosition rdf:resource="&soi;player_A1_position"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/player_A2 -->
+
+    <rdf:Description rdf:about="&so;player_A2">
+        <rdf:type rdf:resource="&so;NotSecondLastPlayer"/>
+        <so:touches rdf:resource="&so;ball4"/>
+        <so:hasPosition rdf:resource="&soi;player_A2_position"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/player_A3 -->
+
+    <rdf:Description rdf:about="&so;player_A3">
+        <rdf:type rdf:resource="&so;NotSecondLastPlayer"/>
+        <so:hasPosition rdf:resource="&soi;player_A3_position"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/player_B1 -->
+
+    <rdf:Description rdf:about="&so;player_B1">
+        <rdf:type rdf:resource="&so;NotSecondLastPlayer"/>
+        <so:hasPosition rdf:resource="&soi;player_B1_position"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/player_B2 -->
+
+    <rdf:Description rdf:about="&so;player_B2">
+        <rdf:type rdf:resource="&so;SecondLastPlayer"/>
+        <so:hasPosition rdf:resource="&soi;player_B2_position"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/player_B3 -->
+
+    <rdf:Description rdf:about="&so;player_B3">
+        <rdf:type rdf:resource="&so;NotSecondLastPlayer"/>
+        <so:hasPosition rdf:resource="&soi;player_B3_position"/>
+    </rdf:Description>
+    
+
+
+    <!-- &soi;player_A1_position -->
+
+    <owl:NamedIndividual rdf:about="&soi;player_A1_position">
+        <rdf:type rdf:resource="&so;Position"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &soi;player_A2_position -->
+
+    <owl:NamedIndividual rdf:about="&soi;player_A2_position">
+        <rdf:type rdf:resource="&so;Position"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &soi;player_A3_position -->
+
+    <owl:NamedIndividual rdf:about="&soi;player_A3_position">
+        <rdf:type rdf:resource="&so;Position"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &soi;player_B1_position -->
+
+    <owl:NamedIndividual rdf:about="&soi;player_B1_position">
+        <rdf:type rdf:resource="&so;Position"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &soi;player_B2_position -->
+
+    <owl:NamedIndividual rdf:about="&soi;player_B2_position">
+        <rdf:type rdf:resource="&so;Position"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &soi;player_B3_position -->
+
+    <owl:NamedIndividual rdf:about="&soi;player_B3_position">
+        <rdf:type rdf:resource="&so;Position"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

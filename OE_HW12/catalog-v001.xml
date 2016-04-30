@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/" uri="OE_12_SoccerOffside.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/" uri="OE_12_SoccerOffside.owl"/>
+    <uri id="User Entered Import Resolution" name="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/" uri="OE_12_SoccerOffside_individuals.owl"/>
+</catalog>
