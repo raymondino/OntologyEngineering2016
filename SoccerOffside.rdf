@@ -8,15 +8,15 @@
     <!ENTITY dct "http://purl.org/dc/terms/" >
     <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
     <!ENTITY dbo "http://dbpedia.org/ontology/">
-    <!ENTITY so "http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_12_Soccer_Offside/" >    
+    <!ENTITY so "http://tw.rpi.edu/web/Courses/Ontologies/2016/projects/soccer/ontology/SoccerOffsideOntology/" >    
     <!ENTITY sm "http://www.omg.org/techprocess/ab/SpecificationMetadata/" >
     <!ENTITY fibo-fnd-utl-av "http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/" >
     <!ENTITY fibo-fnd-org-org "http://www.omg.org/spec/EDMC-FIBO/FND/Organizations/Organizations/" >
     <!ENTITY fibo-fnd-aap-ppl "http://www.omg.org/spec/EDMC-FIBO/FND/AgentsAndPeople/People/" >
-    <!ENTITY fibo-fnd-pla-loc "http://www.omg.org/spec/EDMC-FIBO/FND/Places/Locations/Location/" >
+    <!ENTITY fibo-fnd-plc-loc "http://www.omg.org/spec/EDMC-FIBO/FND/Places/Locations/Location/" >
 ]>
 
-<rdf:RDF xml:base="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_12_Soccer_Offside/"
+<rdf:RDF xml:base="http://tw.rpi.edu/web/Courses/Ontologies/2016/projects/soccer/ontology/SoccerOffsideOntology/"
      xmlns:dct="http://purl.org/dc/terms/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -25,16 +25,16 @@
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:dbo="http://dbpedia.org/ontology/"
-     xmlns:so="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_12_Soccer_Offside/"
+     xmlns:so="http://tw.rpi.edu/web/Courses/Ontologies/2016/projects/soccer/ontology/SoccerOffsideOntology/"
      xmlns:sm="http://www.omg.org/techprocess/ab/SpecificationMetadata/"
      xmlns:fibo-fnd-utl-av="http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/"
      xmlns:fibo-fnd-org-org="http://www.omg.org/spec/EDMC-FIBO/FND/Organizations/Organizations/"
      xmlns:fibo-fnd-aap-ppl="http://www.omg.org/spec/EDMC-FIBO/FND/AgentsAndPeople/People/"
-     xmlns:fibo-fnd-pla-loc="http://www.omg.org/spec/EDMC-FIBO/FND/Places/Locations/Location/" >
+     xmlns:fibo-fnd-plc-loc="http://www.omg.org/spec/EDMC-FIBO/FND/Places/Locations/Location/" >
 
-    <owl:Ontology rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_12_Soccer_Offside/">
+    <owl:Ontology rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/projects/soccer/ontology/SoccerOffsideOntology/">
 
-        <dct:publisher>Soccer Offside Team</dct:publisher>
+        <dct:publisher>Soccer Offside soccerm</dct:publisher>
 
         <dct:contributor>Rui Yan</dct:contributor>
         <dct:contributor>Hao Zhong</dct:contributor>
@@ -43,9 +43,9 @@
         The use case aims to assist referees to determine if an offside offense is committed by the attacking players, and increase the judgement precision.
         </dct:abstract>
 
-        <dct:modified>2016-04-29</dct:modified>
+        <dct:modified>2016-05-07</dct:modified>
         
-        <owl:versionIRI rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/3.2.0/"/>
+        <owl:versionIRI rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/projects/soccer/ontology/SoccerOffsideOntology/3.2.0/"/>
         
         <owl:priorVersion rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside/3.1.0/"/>
         
@@ -127,22 +127,22 @@
         <skos:definition xml:lang="en">a player or ball has a spatial location on the field. </skos:definition>
     </owl:ObjectProperty>
     
-    <owl:ObjectProperty rdf:about="&so;hasTeam">
-        <owl:inverseOf rdf:resource="&so;isTeamOf"/>
+    <owl:ObjectProperty rdf:about="&so;hassoccerm">
+        <owl:inverseOf rdf:resource="&so;issoccermOf"/>
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:domain rdf:resource="&so;Player"/>
-        <rdfs:range rdf:resource="&so;Team"/>
-        <rdfs:label rdf:datatype="&xsd;string">has team</rdfs:label>
+        <rdfs:range rdf:resource="&so;soccerm"/>
+        <rdfs:label rdf:datatype="&xsd;string">has soccerm</rdfs:label>
         <skos:definition xml:lang="en">a player belongs a group of players who play against others</skos:definition>
     </owl:ObjectProperty>
     
-    <owl:ObjectProperty rdf:about="&so;hasTeammate">
+    <owl:ObjectProperty rdf:about="&so;hassoccermmate">
         <rdf:type rdf:resource="&owl;SymmetricProperty"/>
         <rdf:type rdf:resource="&owl;TransitiveProperty"/>
         <rdfs:domain rdf:resource="&so;Player"/>
         <rdfs:range rdf:resource="&so;Player"/>
-        <rdfs:label rdf:datatype="&xsd;string">has teammate</rdfs:label>
-        <skos:definition xml:lang="en">a player belonging to one team should have other players in his or her team that play against other players in other teams</skos:definition>
+        <rdfs:label rdf:datatype="&xsd;string">has soccermmate</rdfs:label>
+        <skos:definition xml:lang="en">a player belonging to one soccerm should have other players in his or her soccerm that play against other players in other soccerms</skos:definition>
     </owl:ObjectProperty>
     
     <owl:ObjectProperty rdf:about="&so;isInvolvedIn">
@@ -180,7 +180,7 @@
         <rdfs:domain rdf:resource="&so;Player"/>
         <rdfs:range rdf:resource="&so;Player"/>
         <rdfs:label rdf:datatype="&xsd;string">is opponent of </rdfs:label>
-        <skos:definition xml:lang="en">different players in different teams are opponents</skos:definition>
+        <skos:definition xml:lang="en">different players in different soccerms are opponents</skos:definition>
     </owl:ObjectProperty>
     
     <owl:ObjectProperty rdf:about="&so;isPositionOf">
@@ -200,12 +200,12 @@
         <skos:definition xml:lang="en">a spatial location of a player or ball</skos:definition>
     </owl:ObjectProperty>
     
-    <owl:ObjectProperty rdf:about="&so;isTeamOf">
+    <owl:ObjectProperty rdf:about="&so;issoccermOf">
         <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
-        <rdfs:domain rdf:resource="&so;Team"/>
+        <rdfs:domain rdf:resource="&so;soccerm"/>
         <rdfs:range rdf:resource="&so;Player"/>
-        <rdfs:label rdf:datatype="&xsd;string">is team of </rdfs:label>
-        <skos:definition xml:lang="en">a team of a player</skos:definition>
+        <rdfs:label rdf:datatype="&xsd;string">is soccerm of </rdfs:label>
+        <skos:definition xml:lang="en">a soccerm of a player</skos:definition>
     </owl:ObjectProperty>
     
     <owl:ObjectProperty rdf:about="&so;playsAgainst">
@@ -213,11 +213,11 @@
         <rdfs:domain rdf:resource="&so;Player"/>
         <rdfs:range rdf:resource="&so;Player"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="&so;hasTeammate"/>
+            <rdf:Description rdf:about="&so;hassoccermmate"/>
             <rdf:Description rdf:about="&so;isOpponentOf"/>
         </owl:propertyChainAxiom>
         <rdfs:label rdf:datatype="&xsd;string">plays against</rdfs:label>
-        <skos:definition xml:lang="en">different players in different teams play against each other</skos:definition>
+        <skos:definition xml:lang="en">different players in different soccerms play against each other</skos:definition>
     </owl:ObjectProperty>
     
     <owl:ObjectProperty rdf:about="&so;touches">
@@ -266,7 +266,7 @@
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&so;BallLastToucher"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="&so;hasTeammate"/>
+                        <owl:onProperty rdf:resource="&so;hassoccermmate"/>
                         <owl:someValuesFrom rdf:resource="&so;BallLastToucher"/>
                     </owl:Restriction>
                 </owl:unionOf>
@@ -276,7 +276,7 @@
         <dct:bibliographicCitation xml:lang="en">Google. Available: https://www.google.com/webhp?sourceid=chrome-instant&amp;ion=1&amp;espv=2&amp;es_th=1&amp;ie=UTF-8#q=attacker+definition</dct:bibliographicCitation>
         <rdfs:label rdf:datatype="&xsd;string">attacker</rdfs:label>
         <skos:definition xml:lang="en">a player that makes an assertive or aggressive attempt to score</skos:definition>
-        <skos:example xml:lang="en">Attacker class describes the players who are attacking. Attacker is composed by a ball toucher and his/her teammates.</skos:example>
+        <skos:example xml:lang="en">Attacker class describes the players who are attacking. Attacker is composed by a ball toucher and his/her soccermmates.</skos:example>
     </owl:Class>
     
 
@@ -379,7 +379,7 @@
         <dct:bibliographicCitation rdf:datatype="&xsd;string">FIFA. 2015/2016. Laws of the game. Available:http://www.fifa.com/mm/Document/FootballDevelopment/Refereeing/02/36/01/11/LawsofthegamewebEN_Neutral.pdf</dct:bibliographicCitation>
         <rdfs:label rdf:datatype="&xsd;string">the ball toucher</rdfs:label>
         <skos:definition xml:lang="en">The latest player who touches the ball at the moment</skos:definition>
-        <skos:example xml:lang="en">BallLastToucher describes the last player who touches the ball at the latest moment. A player whoever touches the ball is an attacker, as his/her team controls the ball.</skos:example>
+        <skos:example xml:lang="en">BallLastToucher describes the last player who touches the ball at the latest moment. A player whoever touches the ball is an attacker, as his/her soccerm controls the ball.</skos:example>
     </owl:Class>
     
 
@@ -424,7 +424,7 @@
         <rdfs:subClassOf rdf:resource="&so;Player"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Google. Available: https://www.google.com/webhp?sourceid=chrome-instant&amp;ion=1&amp;espv=2&amp;es_th=1&amp;ie=UTF-8#q=defender%20definition</dct:bibliographicCitation>
         <rdfs:label rdf:datatype="&xsd;string">the defending player</rdfs:label>
-        <skos:definition xml:lang="en">a player whose task is to protect the team&apos;s goal.</skos:definition>
+        <skos:definition xml:lang="en">a player whose task is to protect the soccerm&apos;s goal.</skos:definition>
         <skos:example xml:lang="en">Defender class describes the players who tries to defend their goal. They don&apos;t control the ball.</skos:example>
     </owl:Class>
     
@@ -444,7 +444,7 @@
         <rdfs:subClassOf rdf:resource="&so;Defender"/>
         <owl:disjointWith rdf:resource="&so;SecondLastDefender"/>
         <rdfs:label rdf:datatype="&xsd;string">defenders who are not the second last defender</rdfs:label>
-        <skos:definition xml:lang="en">A defender whose distance to own goal line is not the second shortest among all his/her teammates. </skos:definition>
+        <skos:definition xml:lang="en">A defender whose distance to own goal line is not the second shortest among all his/her soccermmates. </skos:definition>
     </owl:Class>
     
 
@@ -570,7 +570,7 @@
         <rdfs:subClassOf rdf:resource="&so;Player"/>
         <owl:disjointWith rdf:resource="&so;SecondLastPlayer"/>
         <rdfs:label rdf:datatype="&xsd;string">players that are not second last player</rdfs:label>
-        <skos:definition xml:lang="en">A player whose distance to own goal line is not the second shortest among his/her teammates</skos:definition>
+        <skos:definition xml:lang="en">A player whose distance to own goal line is not the second shortest among his/her soccermmates</skos:definition>
     </owl:Class>
     
 
@@ -618,7 +618,7 @@
         <rdfs:subClassOf rdf:resource="&so;AttackerPosition"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">FIFA. 2015/2016. Laws of the game. Available:http://www.fifa.com/mm/Document/FootballDevelopment/Refereeing/02/36/01/11/LawsofthegamewebEN_Neutral.pdf</dct:bibliographicCitation>
         <rdfs:label rdf:datatype="&xsd;string">offside position</rdfs:label>
-        <skos:definition xml:lang="en"> an offside position is in the opposing team&apos;s half of the field and is also nearer to  opponents&apos; goal line than both the ball and the second-last opponent.</skos:definition>
+        <skos:definition xml:lang="en"> an offside position is in the opposing soccerm&apos;s half of the field and is also nearer to  opponents&apos; goal line than both the ball and the second-last opponent.</skos:definition>
         <skos:example xml:lang="en">offsideposition describes the position of a player, whose position is both nearer to defender&apos;s goalline than ball and second last defender.</skos:example>
     </owl:Class>
     
@@ -778,7 +778,7 @@
 
     <!-- &so;Position -->
     <owl:Class rdf:about="&so;Position">
-        <rdfs:subClassOf rdf:resource="&fibo-fnd-pla-loc;Location"/>
+        <rdfs:subClassOf rdf:resource="&fibo-fnd-plc-loc;Location"/>
         <dct:references rdf:datatype="&xsd;anyURI">https://en.wikipedia.org/wiki/Position</dct:references>
         <rdfs:label rdf:datatype="&xsd;string">position</rdfs:label>
         <skos:definition xml:lang="en">refers to the spatial location (rather than orientation) of an entity.</skos:definition>
@@ -873,25 +873,25 @@
         <rdfs:subClassOf rdf:resource="&so;Player"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">FIFA. 2015/2016. Laws of the game. Available:http://www.fifa.com/mm/Document/FootballDevelopment/Refereeing/02/36/01/11/LawsofthegamewebEN_Neutral.pdf</dct:bibliographicCitation>
         <rdfs:label rdf:datatype="&xsd;string">second last player</rdfs:label>
-        <skos:definition xml:lang="en">the player whose distance to own goal line is the second shortest among his/her teamnates. </skos:definition>
+        <skos:definition xml:lang="en">the player whose distance to own goal line is the second shortest among his/her soccermnates. </skos:definition>
     </owl:Class>
     
 
 
-    <!-- &so;Team -->
+    <!-- &so;soccerm -->
 
-    <owl:Class rdf:about="&so;Team">
+    <owl:Class rdf:about="&so;soccerm">
          <rdfs:subClassOf rdf:resource="&fibo-fnd-org-org;Organization"/>
        <owl:equivalentClass>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&so;teamA"/>
-                    <rdf:Description rdf:about="&so;teamB"/>
+                    <rdf:Description rdf:about="&so;soccermA"/>
+                    <rdf:Description rdf:about="&so;soccermB"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:equivalentClass>
-        <dct:references rdf:datatype="&xsd;anyURI">https://en.wikipedia.org/wiki/Football_team</dct:references>
-        <rdfs:label rdf:datatype="&xsd;string">soccer team</rdfs:label>
+        <dct:references rdf:datatype="&xsd;anyURI">https://en.wikipedia.org/wiki/Football_soccerm</dct:references>
+        <rdfs:label rdf:datatype="&xsd;string">soccer soccerm</rdfs:label>
         <skos:definition xml:lang="en">a group of players forming one side in a competitive game or sport.</skos:definition>
     </owl:Class>
     
@@ -927,8 +927,8 @@
     
     <owl:NamedIndividual rdf:about="&so;goalkeeper_A">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hasTeam rdf:resource="&so;teamA"/>
-        <so:hasTeammate rdf:resource="&so;player_A1"/>
+        <so:hassoccerm rdf:resource="&so;soccermA"/>
+        <so:hassoccermmate rdf:resource="&so;player_A1"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
@@ -942,8 +942,8 @@
     
     <owl:NamedIndividual rdf:about="&so;goalkeeper_B">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hasTeam rdf:resource="&so;teamB"/>
-        <so:hasTeammate rdf:resource="&so;player_B1"/>
+        <so:hassoccerm rdf:resource="&so;soccermB"/>
+        <so:hassoccermmate rdf:resource="&so;player_B1"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
@@ -961,100 +961,100 @@
     
     <owl:NamedIndividual rdf:about="&so;player_A1">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hasTeam rdf:resource="&so;teamA"/>
-        <so:hasTeammate rdf:resource="&so;player_A2"/>
+        <so:hassoccerm rdf:resource="&so;soccermA"/>
+        <so:hassoccermmate rdf:resource="&so;player_A2"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
     <owl:NamedIndividual rdf:about="&so;player_A2">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hasTeam rdf:resource="&so;teamA"/>
-        <so:hasTeammate rdf:resource="&so;player_A3"/>
+        <so:hassoccerm rdf:resource="&so;soccermA"/>
+        <so:hassoccermmate rdf:resource="&so;player_A3"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
     <owl:NamedIndividual rdf:about="&so;player_A3">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hasTeam rdf:resource="&so;teamA"/>
-        <so:hasTeammate rdf:resource="&so;player_A4"/>
+        <so:hassoccerm rdf:resource="&so;soccermA"/>
+        <so:hassoccermmate rdf:resource="&so;player_A4"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
     <owl:NamedIndividual rdf:about="&so;player_A4">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hasTeam rdf:resource="&so;teamA"/>
-        <so:hasTeammate rdf:resource="&so;player_A5"/>
+        <so:hassoccerm rdf:resource="&so;soccermA"/>
+        <so:hassoccermmate rdf:resource="&so;player_A5"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
     <owl:NamedIndividual rdf:about="&so;player_A5">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hasTeam rdf:resource="&so;teamA"/>
-        <so:hasTeammate rdf:resource="&so;player_A6"/>
+        <so:hassoccerm rdf:resource="&so;soccermA"/>
+        <so:hassoccermmate rdf:resource="&so;player_A6"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
     <owl:NamedIndividual rdf:about="&so;player_A6">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hasTeam rdf:resource="&so;teamA"/>
-        <so:hasTeammate rdf:resource="&so;player_A7"/>
+        <so:hassoccerm rdf:resource="&so;soccermA"/>
+        <so:hassoccermmate rdf:resource="&so;player_A7"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
     <owl:NamedIndividual rdf:about="&so;player_A7">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hasTeam rdf:resource="&so;teamA"/>
-        <so:hasTeammate rdf:resource="&so;goalkeeper_A"/>
+        <so:hassoccerm rdf:resource="&so;soccermA"/>
+        <so:hassoccermmate rdf:resource="&so;goalkeeper_A"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
 
     <owl:NamedIndividual rdf:about="&so;player_B1">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hasTeam rdf:resource="&so;teamB"/>
-        <so:hasTeammate rdf:resource="&so;player_B2"/>
+        <so:hassoccerm rdf:resource="&so;soccermB"/>
+        <so:hassoccermmate rdf:resource="&so;player_B2"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
     <owl:NamedIndividual rdf:about="&so;player_B2">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hasTeam rdf:resource="&so;teamB"/>
-        <so:hasTeammate rdf:resource="&so;player_B3"/>
+        <so:hassoccerm rdf:resource="&so;soccermB"/>
+        <so:hassoccermmate rdf:resource="&so;player_B3"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
     <owl:NamedIndividual rdf:about="&so;player_B3">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hasTeam rdf:resource="&so;teamB"/>
-        <so:hasTeammate rdf:resource="&so;player_B4"/>
+        <so:hassoccerm rdf:resource="&so;soccermB"/>
+        <so:hassoccermmate rdf:resource="&so;player_B4"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
     <owl:NamedIndividual rdf:about="&so;player_B4">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hasTeam rdf:resource="&so;teamB"/>
-        <so:hasTeammate rdf:resource="&so;player_B5"/>
+        <so:hassoccerm rdf:resource="&so;soccermB"/>
+        <so:hassoccermmate rdf:resource="&so;player_B5"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
     <owl:NamedIndividual rdf:about="&so;player_B5">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hasTeam rdf:resource="&so;teamB"/>
-        <so:hasTeammate rdf:resource="&so;player_B6"/>
+        <so:hassoccerm rdf:resource="&so;soccermB"/>
+        <so:hassoccermmate rdf:resource="&so;player_B6"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
     <owl:NamedIndividual rdf:about="&so;player_B6">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hasTeam rdf:resource="&so;teamB"/>
-        <so:hasTeammate rdf:resource="&so;player_B7"/>
+        <so:hassoccerm rdf:resource="&so;soccermB"/>
+        <so:hassoccermmate rdf:resource="&so;player_B7"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
     <owl:NamedIndividual rdf:about="&so;player_B7">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hasTeam rdf:resource="&so;teamB"/>
-        <so:hasTeammate rdf:resource="&so;goalkeeper_B"/>
+        <so:hassoccerm rdf:resource="&so;soccermB"/>
+        <so:hassoccermmate rdf:resource="&so;goalkeeper_B"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
@@ -1062,13 +1062,13 @@
         <rdf:type rdf:resource="&so;Referee"/>
     </owl:NamedIndividual>
     
-    <owl:NamedIndividual rdf:about="&so;teamA">
-        <rdf:type rdf:resource="&so;Team"/>
+    <owl:NamedIndividual rdf:about="&so;soccermA">
+        <rdf:type rdf:resource="&so;soccerm"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
-    <owl:NamedIndividual rdf:about="&so;teamB">
-        <rdf:type rdf:resource="&so;Team"/>
+    <owl:NamedIndividual rdf:about="&so;soccermB">
+        <rdf:type rdf:resource="&so;soccerm"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
@@ -1110,8 +1110,8 @@
             <rdf:Description rdf:about="&so;player_B6"/>
             <rdf:Description rdf:about="&so;player_B7"/>
             <rdf:Description rdf:about="&so;referee"/>
-            <rdf:Description rdf:about="&so;teamA"/>
-            <rdf:Description rdf:about="&so;teamB"/>
+            <rdf:Description rdf:about="&so;soccermA"/>
+            <rdf:Description rdf:about="&so;soccermB"/>
         </owl:distinctMembers>
     </rdf:Description>
 

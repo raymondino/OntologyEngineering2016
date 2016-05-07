@@ -8,23 +8,23 @@
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY so "http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/" >
-    <!ENTITY soi "http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/" >
+    <!ENTITY so "http://tw.rpi.edu/web/Courses/Ontologies/2016/SoccerOffside/" >
+    <!ENTITY soi "http://tw.rpi.edu/web/Courses/Ontologies/2016/projects/soccer/ontology/SoccerOffsideIndividualOntology/" >
     <!ENTITY sm "http://www.omg.org/techprocess/ab/SpecificationMetadata/" >
 ]>
 
 
-<rdf:RDF xml:base="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/"
+<rdf:RDF xml:base="http://tw.rpi.edu/web/Courses/Ontologies/2016/projects/soccer/ontology/SoccerOffsideIndividualOntology/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:soi="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/"     
-     xmlns:so="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/"
+     xmlns:soi="http://tw.rpi.edu/web/Courses/Ontologies/2016/projects/soccer/ontology/SoccerOffsideIndividualOntology/"     
+     xmlns:so="http://tw.rpi.edu/web/Courses/Ontologies/2016/SoccerOffside/"
      xmlns:sm="http://www.omg.org/techprocess/ab/SpecificationMetadata/"
      xmlns:dct="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <owl:Ontology rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/">
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <owl:Ontology rdf:about="http://tw.rpi.edu/web/Courses/Ontologies/2016/projects/soccer/ontology/SoccerOffsideIndividualOntology/" >
         
         <dct:abstract>The use case aims to assist referees to determine if an offside offense is committed by the attacking players, and increase the judgement precision.</dct:abstract>
         
@@ -32,13 +32,13 @@
         <dct:publisher>Soccer Offside Team</dct:publisher>
         <dct:contributor>Hao Zhong</dct:contributor>
         
-        <owl:priorVersion>http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_9_Soccer_Offside_Individuals/3.0.0/</owl:priorVersion>
+        <owl:priorVersion>http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_9_Soccer_Offside_Individuals/3.1.0/</owl:priorVersion>
         
-        <dct:modified>2016-4-29</dct:modified>
+        <dct:modified>2016-5-07</dct:modified>
         
-        <owl:imports rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/"/>
+        <owl:imports rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/projects/soccer/ontology/SoccerOffsideOntology/"/>
         
-        <owl:versionIRI rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/Soccer_Offside_Individuals/3.1.0"/>
+        <owl:versionIRI rdf:resource="http://tw.rpi.edu/web/Courses/Ontologies/2016/projects/soccer/ontology/SoccerOffsideIndividualOntology3.1.0"/>
 
                 <sm:copyright rdf:datatype="&xsd;string">Copyright (c) 2016 Rui Yan, Hao Zhong</sm:copyright>
         <dct:license rdf:resource="&sm;MITLicense"/>
@@ -59,7 +59,7 @@
     
 
 
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/ball10 -->
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/SoccerOffside/ball10 -->
 
     <rdf:Description rdf:about="&so;ball10">
         <rdf:type rdf:resource="&so;BackupBall"/>
@@ -67,7 +67,7 @@
     
 
 
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/ball12 -->
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/SoccerOffside/ball12 -->
 
     <rdf:Description rdf:about="&so;ball12">
         <rdf:type rdf:resource="&so;BackupBall"/>
@@ -75,7 +75,7 @@
     
 
 
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/ball4 -->
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/SoccerOffside/ball4 -->
 
     <rdf:Description rdf:about="&so;ball4">
         <rdf:type rdf:resource="&so;InFieldBall"/>
@@ -83,7 +83,7 @@
     
 
 
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/ball8 -->
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/SoccerOffside/ball8 -->
 
     <rdf:Description rdf:about="&so;ball8">
         <rdf:type rdf:resource="&so;BackupBall"/>
@@ -91,7 +91,7 @@
     
 
 
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/goalkeeper_A -->
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/SoccerOffside/goalkeeper_A -->
 
     <rdf:Description rdf:about="&so;goalkeeper_A">
         <so:isOpponentOf rdf:resource="&so;goalkeeper_B"/>
@@ -99,7 +99,7 @@
     
 
 
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/player_A1 -->
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/SoccerOffside/player_A1 -->
 
     <rdf:Description rdf:about="&so;player_A1">
         <rdf:type rdf:resource="&so;NotSecondLastPlayer"/>
@@ -111,7 +111,7 @@
     
 
 
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/player_A2 -->
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/SoccerOffside/player_A2 -->
 
     <rdf:Description rdf:about="&so;player_A2">
         <rdf:type rdf:resource="&so;NotSecondLastPlayer"/>
@@ -121,7 +121,7 @@
     
 
 
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/player_A3 -->
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/SoccerOffside/player_A3 -->
 
     <rdf:Description rdf:about="&so;player_A3">
         <rdf:type rdf:resource="&so;NotSecondLastPlayer"/>
@@ -130,7 +130,7 @@
     
 
 
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/player_B1 -->
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/SoccerOffside/player_B1 -->
 
     <rdf:Description rdf:about="&so;player_B1">
         <rdf:type rdf:resource="&so;NotSecondLastPlayer"/>
@@ -139,7 +139,7 @@
     
 
 
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/player_B2 -->
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/SoccerOffside/player_B2 -->
 
     <rdf:Description rdf:about="&so;player_B2">
         <rdf:type rdf:resource="&so;SecondLastPlayer"/>
@@ -148,7 +148,7 @@
     
 
 
-    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/OE_11_Soccer_Offside/player_B3 -->
+    <!-- http://tw.rpi.edu/web/Courses/Ontologies/2016/SoccerOffside/player_B3 -->
 
     <rdf:Description rdf:about="&so;player_B3">
         <rdf:type rdf:resource="&so;NotSecondLastPlayer"/>
