@@ -127,7 +127,7 @@
         <skos:definition xml:lang="en">a player or ball has a spatial location on the field. </skos:definition>
     </owl:ObjectProperty>
     
-    <owl:ObjectProperty rdf:about="&so;hassoccerm">
+    <owl:ObjectProperty rdf:about="&so;hasTeam">
         <owl:inverseOf rdf:resource="&so;issoccermOf"/>
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:domain rdf:resource="&so;Player"/>
@@ -136,7 +136,7 @@
         <skos:definition xml:lang="en">a player belongs a group of players who play against others</skos:definition>
     </owl:ObjectProperty>
     
-    <owl:ObjectProperty rdf:about="&so;hassoccermmate">
+    <owl:ObjectProperty rdf:about="&so;hasTeammate">
         <rdf:type rdf:resource="&owl;SymmetricProperty"/>
         <rdf:type rdf:resource="&owl;TransitiveProperty"/>
         <rdfs:domain rdf:resource="&so;Player"/>
@@ -213,7 +213,7 @@
         <rdfs:domain rdf:resource="&so;Player"/>
         <rdfs:range rdf:resource="&so;Player"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="&so;hassoccermmate"/>
+            <rdf:Description rdf:about="&so;hasTeammate"/>
             <rdf:Description rdf:about="&so;isOpponentOf"/>
         </owl:propertyChainAxiom>
         <rdfs:label rdf:datatype="&xsd;string">plays against</rdfs:label>
@@ -266,7 +266,7 @@
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&so;BallLastToucher"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="&so;hassoccermmate"/>
+                        <owl:onProperty rdf:resource="&so;hasTeammate"/>
                         <owl:someValuesFrom rdf:resource="&so;BallLastToucher"/>
                     </owl:Restriction>
                 </owl:unionOf>
@@ -927,8 +927,8 @@
     
     <owl:NamedIndividual rdf:about="&so;goalkeeper_A">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hassoccerm rdf:resource="&so;soccermA"/>
-        <so:hassoccermmate rdf:resource="&so;player_A1"/>
+        <so:hasTeam rdf:resource="&so;soccermA"/>
+        <so:hasTeammate rdf:resource="&so;player_A1"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
@@ -942,8 +942,8 @@
     
     <owl:NamedIndividual rdf:about="&so;goalkeeper_B">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hassoccerm rdf:resource="&so;soccermB"/>
-        <so:hassoccermmate rdf:resource="&so;player_B1"/>
+        <so:hasTeam rdf:resource="&so;soccermB"/>
+        <so:hasTeammate rdf:resource="&so;player_B1"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
@@ -961,100 +961,100 @@
     
     <owl:NamedIndividual rdf:about="&so;player_A1">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hassoccerm rdf:resource="&so;soccermA"/>
-        <so:hassoccermmate rdf:resource="&so;player_A2"/>
+        <so:hasTeam rdf:resource="&so;soccermA"/>
+        <so:hasTeammate rdf:resource="&so;player_A2"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
     <owl:NamedIndividual rdf:about="&so;player_A2">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hassoccerm rdf:resource="&so;soccermA"/>
-        <so:hassoccermmate rdf:resource="&so;player_A3"/>
+        <so:hasTeam rdf:resource="&so;soccermA"/>
+        <so:hasTeammate rdf:resource="&so;player_A3"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
     <owl:NamedIndividual rdf:about="&so;player_A3">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hassoccerm rdf:resource="&so;soccermA"/>
-        <so:hassoccermmate rdf:resource="&so;player_A4"/>
+        <so:hasTeam rdf:resource="&so;soccermA"/>
+        <so:hasTeammate rdf:resource="&so;player_A4"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
     <owl:NamedIndividual rdf:about="&so;player_A4">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hassoccerm rdf:resource="&so;soccermA"/>
-        <so:hassoccermmate rdf:resource="&so;player_A5"/>
+        <so:hasTeam rdf:resource="&so;soccermA"/>
+        <so:hasTeammate rdf:resource="&so;player_A5"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
     <owl:NamedIndividual rdf:about="&so;player_A5">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hassoccerm rdf:resource="&so;soccermA"/>
-        <so:hassoccermmate rdf:resource="&so;player_A6"/>
+        <so:hasTeam rdf:resource="&so;soccermA"/>
+        <so:hasTeammate rdf:resource="&so;player_A6"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
     <owl:NamedIndividual rdf:about="&so;player_A6">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hassoccerm rdf:resource="&so;soccermA"/>
-        <so:hassoccermmate rdf:resource="&so;player_A7"/>
+        <so:hasTeam rdf:resource="&so;soccermA"/>
+        <so:hasTeammate rdf:resource="&so;player_A7"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
     <owl:NamedIndividual rdf:about="&so;player_A7">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hassoccerm rdf:resource="&so;soccermA"/>
-        <so:hassoccermmate rdf:resource="&so;goalkeeper_A"/>
+        <so:hasTeam rdf:resource="&so;soccermA"/>
+        <so:hasTeammate rdf:resource="&so;goalkeeper_A"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
 
     <owl:NamedIndividual rdf:about="&so;player_B1">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hassoccerm rdf:resource="&so;soccermB"/>
-        <so:hassoccermmate rdf:resource="&so;player_B2"/>
+        <so:hasTeam rdf:resource="&so;soccermB"/>
+        <so:hasTeammate rdf:resource="&so;player_B2"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
     <owl:NamedIndividual rdf:about="&so;player_B2">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hassoccerm rdf:resource="&so;soccermB"/>
-        <so:hassoccermmate rdf:resource="&so;player_B3"/>
+        <so:hasTeam rdf:resource="&so;soccermB"/>
+        <so:hasTeammate rdf:resource="&so;player_B3"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
     <owl:NamedIndividual rdf:about="&so;player_B3">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hassoccerm rdf:resource="&so;soccermB"/>
-        <so:hassoccermmate rdf:resource="&so;player_B4"/>
+        <so:hasTeam rdf:resource="&so;soccermB"/>
+        <so:hasTeammate rdf:resource="&so;player_B4"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
     <owl:NamedIndividual rdf:about="&so;player_B4">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hassoccerm rdf:resource="&so;soccermB"/>
-        <so:hassoccermmate rdf:resource="&so;player_B5"/>
+        <so:hasTeam rdf:resource="&so;soccermB"/>
+        <so:hasTeammate rdf:resource="&so;player_B5"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
     <owl:NamedIndividual rdf:about="&so;player_B5">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hassoccerm rdf:resource="&so;soccermB"/>
-        <so:hassoccermmate rdf:resource="&so;player_B6"/>
+        <so:hasTeam rdf:resource="&so;soccermB"/>
+        <so:hasTeammate rdf:resource="&so;player_B6"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
     <owl:NamedIndividual rdf:about="&so;player_B6">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hassoccerm rdf:resource="&so;soccermB"/>
-        <so:hassoccermmate rdf:resource="&so;player_B7"/>
+        <so:hasTeam rdf:resource="&so;soccermB"/>
+        <so:hasTeammate rdf:resource="&so;player_B7"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
     <owl:NamedIndividual rdf:about="&so;player_B7">
         <rdf:type rdf:resource="&so;Player"/>
-        <so:hassoccerm rdf:resource="&so;soccermB"/>
-        <so:hassoccermmate rdf:resource="&so;goalkeeper_B"/>
+        <so:hasTeam rdf:resource="&so;soccermB"/>
+        <so:hasTeammate rdf:resource="&so;goalkeeper_B"/>
         <dct:bibliographicCitation rdf:datatype="&xsd;string">Mutschler C, Ziekow H, Jerzak Z. The DEBS 2013 grand challenge[C]//Proceedings of the 7th ACM international conference on Distributed event-based systems. ACM, 2013: 289-294.</dct:bibliographicCitation>
     </owl:NamedIndividual>
     
